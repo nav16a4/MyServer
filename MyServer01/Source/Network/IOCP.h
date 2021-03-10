@@ -40,6 +40,8 @@ namespace My {
 	public:
 	protected:
 	private:
+		using Key = unsigned long long;
+		
 		My::LogStream& m_logstream;
 		SOCKET& m_socket;
 		HANDLE& m_handle;
@@ -52,7 +54,10 @@ namespace My {
 		/*ClientIDmanager& m_idmanager;
 		OverlappedManager& m_overlapped;
 		PacketProcess& m_packetprocess;*/
-		
+
+		My::Overlapped* m_dummy_login;
+		My::Overlapped* m_dummy_logout;
+		::SOCKET m_dummysocket;
 		
 		//===============MemberFuntion======================
 	public:
@@ -70,6 +75,12 @@ namespace My {
 		void Send(int id,char* ptr, int n);
 		void NewClientProcess(SOCKET& sock);
 		void DelClientProcess(int id);
+
+		void Login(Key id);
+		void Logout(Key id);
+		// 임시 추가
+
+	
 	};
 }
 

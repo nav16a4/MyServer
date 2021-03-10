@@ -100,11 +100,13 @@ namespace My {
 			std::any dummy = nullptr;
 			return dummy;
 		}
-		
+
+	
 		template <class R>
 		auto ExecuteFromPacket( Types... args, Packet& packet, std::function<R(Types...)> func  )
 		{
-			func(args...);
+			//func(args...);
+			return returnanywithlog(func,args...);
 		}
 
 		template <class R,class T0>

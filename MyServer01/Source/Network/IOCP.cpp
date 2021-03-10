@@ -39,8 +39,7 @@ My::IOCP::IOCP(
 ) :
 	m_logstream(*ls),
 	m_socket(*sock),
-	m_handle(*handle)
-	
+	m_handle(*handle)	
 {
 	m_isserverrunning = true;
 	 
@@ -48,6 +47,20 @@ My::IOCP::IOCP(
 	m_idmanager = new My::ClientIDmanager;
 	m_packetprocess = new My::PacketProcess;
 
+	//로그인 로그아웃용 더미 오버랩
+	//나중에 꼭 더미 만드는건 오버랩 구조체 내부에 구현하고
+	//...
+	m_dummy_login = new My::Overlapped(m_dummysocket);
+	m_dummy_logout = new My::Overlapped(m_dummysocket);
+	auto temp = [](My::Overlapped* ov, int n)
+	{
+		//n은 127이하여야하는데 나중에 수정할 때 추가.
+		ov->buffer[0] = 3;
+		ov->buffer[1] = n;
+		ov->buffer[2] = n;
+	};
+	temp(m_dummy_login, 1);
+	temp(m_dummy_logout, 2);
 }
 
 My::IOCP::~IOCP()
@@ -55,6 +68,9 @@ My::IOCP::~IOCP()
 	delete m_overlapped;
 	delete m_idmanager;
 	delete m_packetprocess;
+
+	delete m_dummy_login;
+	delete m_dummy_logout;
 }
 
 std::optional<int> My::IOCP::GetClientID()
@@ -136,6 +152,11 @@ void My::IOCP::NewClientProcess(SOCKET& sock)
 				createiocpportlogger << __MYFUNCNAME(CreateIOCPport());
 				createiocpportlogger(m_handle, idvalue, reinterpret_cast<HANDLE>(socket));
 				m_overlapped->operator()(idvalue, socket);
+				//여기에 추가
+
+				//로그인
+				Login(idvalue);
+				
 				m_overlapped->Recv(idvalue);
 			},
 			[&](int idvalue)
@@ -162,6 +183,20 @@ void My::IOCP::DelClientProcess(int id)
 	const char* message = "  접속 종료\n";
 	m_overlapped->Send(id,message,strlen(message));
 	m_overlapped->Close(id);
+}
+
+void My::IOCP::Login(Key id)
+{
+	static Overlapped& dummy = *m_dummy_login;
+	//여기서 3은 
+	Notify(dummy, id,3);
+}
+
+void My::IOCP::Logout(Key id)
+{
+	static Overlapped& dummy = *m_dummy_logout;
+	//여기서 3은 
+	Notify(dummy, id, 3);
 }
 
 
@@ -218,6 +253,8 @@ void My::IOCP::WorkerThread(const int number, HANDLE handle)
 		{
 			m_logstream << fmt::format("{}번 유저 접속종료\n\0", key);
 			m_overlapped->Close(key);
+
+			
 		}
 		
 		if(0==ioresult)
@@ -233,6 +270,8 @@ void My::IOCP::WorkerThread(const int number, HANDLE handle)
 			char errormessage[256];
 			GetErrorMessage(sizeof(errormessage),errormessage, error);
 			m_logstream << fmt::format("{}번 유저 통신 에러 : {}\n\0", key, errormessage);
+
+			Logout(key);
 			continue;
 		}
 	

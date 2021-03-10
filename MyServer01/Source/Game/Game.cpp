@@ -45,6 +45,10 @@ void My::Game::InitFunc()
 {
 	m_function->ResisterFunc(0, stdfunction(&Game::Chat, this));
 	//ResistFunction(0, My::makeClassStdFuntion(&Game::Chat, this));
+	m_function->ResisterFunc(1, stdfunction(&Game::Login, this));
+	m_function->ResisterFunc(2, stdfunction(&Game::Logout, this));
+
+	
 }
 
 void My::Game::Test()
@@ -59,20 +63,22 @@ void My::Game::Chat(int n,std::string str)
 
 void My::Game::Login(int n)
 {
-	const typename Object::IDType  id= n;
+	std::cout << "login : " << n << std::endl;
+	/*const typename Object::IDType  id= n;
 	auto newclient = new My::Player(id);
 	m_players[n] = newclient;
-	m_rootGameObj->Add(m_players[n]);
+	m_rootGameObj->Add(m_players[n]);*/
 	
 }
 
 void My::Game::Logout(int n)
 {
-	const typename Object::IDType id = n;
+	std::cout << "logout : " << n << std::endl;
+	/*const typename Object::IDType id = n;
 
 	m_players[n]->Delete();
 	delete m_players[n];
-	m_players[n] = nullptr;
+	m_players[n] = nullptr;*/
 }
 
 void My::Game::Update(Packet& source, const unsigned long long id)

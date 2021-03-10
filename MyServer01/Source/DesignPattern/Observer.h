@@ -37,3 +37,4 @@ private:
 	std::vector<Observer<Type,Args...>*> observers;
 	std::shared_mutex mutex;
 };
+
