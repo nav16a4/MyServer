@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Util">
+      <UniqueIdentifier>{ebc5edcf-df80-498f-9545-56450c365d4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Util\Logger">
+      <UniqueIdentifier>{6fd27002-6d38-4974-9a99-ea63d272a808}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\DesignPattern">
+      <UniqueIdentifier>{0b2c4394-6835-489f-b9e3-2b7287df294b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\00_Network">
+      <UniqueIdentifier>{6f28ac05-1eda-49ad-bb43-80433c1e5f70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01_Packet">
+      <UniqueIdentifier>{a8888c3c-0787-4d29-900f-28e291d3428b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02_Game">
+      <UniqueIdentifier>{21dc794d-9ec4-4640-bd23-44d65dfe36c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Precompiled">
+      <UniqueIdentifier>{96d25d5a-c7e0-48d1-85fb-e03f158e626c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MyServer01.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\App.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Util\String.cpp">
+      <Filter>소스 파일\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Precompiled\Precompiled.cpp">
+      <Filter>소스 파일\Precompiled</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Network\MyOverlappedex.cpp">
+      <Filter>소스 파일\00_Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Network\IOCP.cpp">
+      <Filter>소스 파일\00_Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Util\Log.cpp">
+      <Filter>소스 파일\Util\Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Network\ClientIDmanager.cpp">
+      <Filter>소스 파일\00_Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Util\Ringbuffer01.cpp">
+      <Filter>소스 파일\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Packet\PacketAssembler.cpp">
+      <Filter>소스 파일\01_Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Packet\PacketProcess.cpp">
+      <Filter>소스 파일\01_Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Network\NetworkBuilder.cpp">
+      <Filter>소스 파일\00_Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Packet\Packet.cpp">
+      <Filter>소스 파일\01_Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Network\Socket.cpp">
+      <Filter>소스 파일\00_Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DesignPattern\Observer.cpp">
+      <Filter>소스 파일\DesignPattern</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Util\Utility.cpp">
+      <Filter>소스 파일\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DefaultValue.cpp">
+      <Filter>소스 파일\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game\Lobby.cpp">
+      <Filter>소스 파일\02_Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game\Room.cpp">
+      <Filter>소스 파일\02_Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game\Player.cpp">
+      <Filter>소스 파일\02_Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game\Game.cpp">
+      <Filter>소스 파일\02_Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game\GameObject.cpp">
+      <Filter>소스 파일\02_Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Util\MyFunction.cpp">
+      <Filter>소스 파일\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Packet\PacketExtractor.cpp">
+      <Filter>소스 파일\01_Packet</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Util\String.h">
+      <Filter>소스 파일\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Precompiled\Precompiled.h">
+      <Filter>소스 파일\Precompiled</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Util\Ringbuffer.h">
+      <Filter>소스 파일\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Network\MyOverlappedex.h">
+      <Filter>소스 파일\00_Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Network\IOCP.h">
+      <Filter>소스 파일\00_Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\App.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Util\Log.h">
+      <Filter>소스 파일\Util\Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DesignPattern\MayBe.h">
+      <Filter>소스 파일\DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DesignPattern\MayBe.tpp">
+      <Filter>소스 파일\DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DesignPattern\Singleton.h">
+      <Filter>소스 파일\DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Network\Protocol.h">
+      <Filter>소스 파일\00_Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Network\ClientIDmanager.h">
+      <Filter>소스 파일\00_Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Util\Ringbuffer01.h">
+      <Filter>소스 파일\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Packet\PacketAssembler.h">
+      <Filter>소스 파일\01_Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Packet\PacketProcess.h">
+      <Filter>소스 파일\01_Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Network\NetworkBuilder.h">
+      <Filter>소스 파일\00_Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Network\Socket.h">
+      <Filter>소스 파일\00_Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DesignPattern\Observer.h">
+      <Filter>소스 파일\DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Util\Utility.h">
+      <Filter>소스 파일\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Packet\Packet.h">
+      <Filter>소스 파일\01_Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DefaultValue.h">
+      <Filter>소스 파일\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game\Lobby.h">
+      <Filter>소스 파일\02_Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game\Room.h">
+      <Filter>소스 파일\02_Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game\Game.h">
+      <Filter>소스 파일\02_Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game\Player.h">
+      <Filter>소스 파일\02_Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game\GameObject.h">
+      <Filter>소스 파일\02_Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Util\MyFunction.h">
+      <Filter>소스 파일\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Packet\PacketExtractor.h">
+      <Filter>소스 파일\01_Packet</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\Util\String.tpp">
+      <Filter>소스 파일\Util</Filter>
+    </None>
+  </ItemGroup>
+</Project>
